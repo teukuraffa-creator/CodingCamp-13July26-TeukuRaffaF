@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <button id="themeToggle" class="theme-toggle" title="Toggle light / dark mode">🌙</button>
+
+  <div class="dashboard">
+
+    <section class="card greeting-card">
+      <div class="clock" id="clock">--:--:--</div>
+      <div class="date" id="date">Loading date...</div>
+
+      <div class="greeting-row">
+        <h1 class="greeting" id="greeting">Hello</h1>
+        <button class="edit-name-btn" id="editNameBtn" title="Set your name">✎</button>
+      </div>
+
+      <div class="name-editor hidden" id="nameEditor">
+        <input type="text" id="nameInput" placeholder="What should we call you?" maxlength="24">
+        <button id="saveNameBtn">Save</button>
+      </div>
+    </section>
+
+    <section class="card timer-card">
+      <h2 class="card-title">Focus Timer</h2>
+
+      <div class="timer-display" id="timerDisplay">25:00</div>
+
+      <div class="timer-controls">
+        <button id="startBtn" class="btn btn-primary">Start</button>
+        <button id="stopBtn" class="btn btn-secondary">Stop</button>
+        <button id="resetBtn" class="btn btn-secondary">Reset</button>
+      </div>
+
+      <div class="timer-settings">
+        <label for="durationInput">Session length (minutes)</label>
+        <div class="duration-row">
+          <input type="number" id="durationInput" min="1" max="120" value="25">
+          <button id="applyDurationBtn" class="btn btn-outline">Apply</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card tasks-card">
+      <h2 class="card-title">Tasks</h2>
+
+      <form id="taskForm" class="task-form">
+        <input type="text" id="taskInput" placeholder="Add a new task..." maxlength="120" autocomplete="off">
+        <button type="submit" class="btn btn-primary">Add</button>
+      </form>
+      <p class="inline-warning hidden" id="duplicateWarning">That task is already on your list.</p>
+
+      <div class="task-toolbar">
+        <label for="sortSelect">Sort</label>
+        <select id="sortSelect">
+          <option value="default">Default</option>
+          <option value="alpha">A → Z</option>
+          <option value="done">Done last</option>
+        </select>
+      </div>
+
+      <ul class="task-list" id="taskList"></ul>
+      <p class="empty-state hidden" id="emptyState">No tasks yet. Add your first one above.</p>
+    </section>
+
+    <section class="card links-card">
+      <h2 class="card-title">Quick Links</h2>
+
+      <form id="linkForm" class="link-form">
+        <input type="text" id="linkNameInput" placeholder="Link name" maxlength="20">
+        <input type="url" id="linkUrlInput" placeholder="URL (https://...)">
+        <button type="submit" class="btn btn-primary">Add Link</button>
+      </form>
+
+      <div class="link-list" id="linkList"></div>
+    </section>
+
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

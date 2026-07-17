@@ -1,0 +1,14 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+# Note: .kiro/ is intentionally NOT ignored so project config is shared via git
+
+# Logs
+*.log
+
+# Local env files
+.env
+.env.local
